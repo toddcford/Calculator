@@ -103,7 +103,7 @@ void Calculator::unloadStack(){
 
 void Calculator::inToPost() {
   Token t = m_scanner.next();
-  t = m_scanner.next(); // hack for now -- need this so that token type isn't END_OF_LINE
+  t = m_scanner.next(); // need this so that token type isn't END_OF_LINE
   
   while(t.type() != Token::END_OF_LINE) {
     if (isNumber(t))
@@ -230,16 +230,7 @@ void promptUser() {
 int main() {
   
   promptUser();
- 
-  /*  
-
-    I think this works. Need to clean up evalPostFix, make comments, catch errors, and try harder tests
-    
-    Still some issues with subtraction vs negation based on how expressions are inputted.
-
-   */
-  
-    
+     
   return 0;
 
 }
